@@ -23,17 +23,19 @@ fetch('https://randomuser.me/api/?results=12')
     function renderName(){
       return `
       ${users.map(users => `
-        <ul>
-        <li>${users.picture.medium}</li>
-          <li>${users.name.first} ${users.name.last}</li>
-        <li>${users.email}</li>
-        <li>${users.location.street}  </li>
-        <li>${users.location.city} ${users.location.state} ${users.location.postcode} </li>
+        <div class="customer">
+          <ul>
+            <img src='${users.picture.large}'/>
+              <li class="name">${users.name.first} ${users.name.last}</li>
+            <li>${users.email}</li>
+            <li>${users.location.street}  </li>
+            <li>${users.location.city} ${users.location.state} ${users.location.postcode} </li>
 
-        <li>${users.cell}</li>
+            <li>${users.cell}</li>
 
-        <li>${users.id.name} ${users.id.value}</li>
-        </ul>
+            <li>${users.id.name} ${users.id.value}</li>
+          </ul>
+        </div>
       `).join('')}
 
       `
@@ -42,13 +44,13 @@ fetch('https://randomuser.me/api/?results=12')
     // console.log(users);
 
     let markup = `
-    <div class="Customer">
-    <p>Internal Company Directory ${renderName()}</p>
+    <div class="customers">
+    ${renderName()}
     </div>`
 
     console.log(JSON.stringify(users));
 
-    document.body.innerHTML = markup;
+    document.body.innerHTML += markup;
 
 
 
