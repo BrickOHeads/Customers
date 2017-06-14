@@ -1,0 +1,22 @@
+
+p {
+  text-transform: uppercase;
+  text-align: center;
+  font-family: sans-serif;
+  font-style: bold;
+  font-size: 2em;
+}
+
+ul {
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*flex-wrap: wrap;*/
+  width: 10%;
+}
+
+ li {
+   /*display: flex;*/
+   /*flex-direction: column;*/
+   list-style: none;
+
+ }
